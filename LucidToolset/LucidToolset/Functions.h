@@ -16,6 +16,10 @@ namespace pfunctions{
 	}
 
 	void UtilityCommands(int argc, char* args[]){
+		if (Argument(args[2]) == "-md5" && argc == 3) {
+
+		};
+		if (Argument(args[2]) == "-md5" && argc != 3) cout << "Missing '<filepath>' argument\nUsage: lucid -u -md5 <filepath>"; return;
 	}
 	void EncryptionCommands(int argc, char* args[]){
 	}
@@ -25,3 +29,4 @@ namespace pfunctions{
 	}
 
 }
+
