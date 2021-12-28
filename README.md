@@ -1,2 +1,2 @@
 # lucid-toolset
-Windows CLI extensions
+Windows CLI extension
