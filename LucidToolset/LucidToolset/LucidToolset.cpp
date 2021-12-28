@@ -1,9 +1,12 @@
 // Library imports/includes
-#include <iostream>
 #include <string>
 #include <cstring>
+#include <iostream>
+
+//Header imports
 #include "Variables.h"
 #include "Functions.h"
+
 // Namespace declerations
 using namespace std;
 
@@ -14,12 +17,17 @@ int main(int argc, char* arg[])
     if (argc == 1) { cout << pvariables::helpMenu; return 0; }
     else {
         
-        // Cant use char in a statement, so if statements will need to be used
+        // Check for empty menu keyword (To display help for each option)
         if (pfunctions::Argument(arg[1]) == "-h" && argc == 2) { cout << pvariables::helpMenu; return 0; }
         if (pfunctions::Argument(arg[1]) == "-u" && argc == 2) { cout << pvariables::utilMenu; return 0; }
         if (pfunctions::Argument(arg[1]) == "-e" && argc == 2) { cout << pvariables::encMenu; return 0; }
         if (pfunctions::Argument(arg[1]) == "-en" && argc == 2) { cout << pvariables::encoMenu; return 0; }
         if (pfunctions::Argument(arg[1]) == "-n" && argc == 2) { cout << pvariables::netMenu; return 0; }
+        // Check for command menu keywords
+        if (pfunctions::Argument(arg[1]) == "-u" && argc > 2) { pfunctions::UtilityCommands(argc, arg); return 0;}
+        if (pfunctions::Argument(arg[1]) == "-e" && argc > 2) { pfunctions::EncryptionCommands(argc, arg); return 0; }
+        if (pfunctions::Argument(arg[1]) == "-en" && argc > 2) { pfunctions::EncodingCommands(argc, arg); return 0; }
+        if (pfunctions::Argument(arg[1]) == "-n" && argc > 2) { pfunctions::NetworkCommands(argc, arg); return 0; }
 
         // If no suitable command detected, run following code
         if (argc > 2) { cout << "Error: Command overload"; return 0; }

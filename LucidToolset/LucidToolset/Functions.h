@@ -14,4 +14,14 @@ namespace pfunctions{
 		string converted_value = temp_arg;
 		return converted_value;
 	}
+
+	void UtilityCommands(int argc, char* args[]){
+	}
+	void EncryptionCommands(int argc, char* args[]){
+	}
+	void EncodingCommands(int argc, char* args[]){
+	}
+	void NetworkCommands(int argc, char* args[]){
+	}
+
 }
